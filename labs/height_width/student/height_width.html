@@ -9,20 +9,26 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples
 <head>
     <title>Manejo de atributos de imágenes (height/width)</title>
     <!-- LAB: Añade la hoja de estilo my_styles.css -->
+    <link href="/labs/height_width/student/my_styles.css" rel="stylesheet" />
+
     
     <script>
         function init() {
             // LAB: Actualiza las dimensiones de arrImages
-            var arrImages = new Array(3);
+            var arrImages = new Array(6);
 
             arrImages[0] = document.getElementById("image1");
             arrImages[1] = document.getElementById("image2");
             arrImages[2] = document.getElementById("image3");
+
             // LAB: Asigna el valor de arrImages[3] para que corresponda al elemento con id "image4"
+            arrImages[3] = document.getElementById("image4");
             
             // LAB: Asigna el valor de arrImages [4] para que corresponde con el elemento con id "image5"
+            arrImages[4] = document.getElementById("image5");
             
             // LAB: Asigna el valor de arrImages [5] para que corresponde con el elemento con id "image5"
+            arrImages[5] = document.getElementById("image5");
             
 
             var objOutput = document.getElementById("output");
@@ -35,7 +41,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples
                     ": height=" + arrImages[i].height +
                     ", width=" + arrImages[i].width +
                     ", style.height=" + arrImages[i].style.height +
-                    ", style.width=" + arrImages[i].style.width
+                    ", style.width=" + arrImages[i].style.width +
+                    ", class=" + arrImages[i].className
                 "<\/li>";
             }
 
@@ -48,9 +55,39 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples
 
 <body onload="init();">
     <h1>Raw Images</h1>
-    <p>Image 1: no height, width, or style
-        <img id="image1" src="../img/idwI8mjeIiIZAAAAAAAAAcRQ_w1024h768_c0.jpeg">
+    <p>Image 1:  
+        <img id="image1", src="/labs/img/54696.jpg">
     </p>
+
+
+    <p>Image 2: height="256", but no style
+        <img id="image2" src="/labs/img/951834.jpg" height="256px">
+    </p>
+
+
+    <p>Image 3: no height, width, but style="height: 512px;"
+        <img id="image3" src="/labs/img/Assassins-creed-watch-dogs-logo-crossover-game-hd-wallpaper-1920x1080.jpg" style="height: 512px;">
+    </p>
+
+    <p>Image 4: style=small_img
+        <img id="image4" , src="/labs/img/wallpapersden.com_k-hack-art_2560x1440.jpg" class="small_img">
+    </p>
+
+
+    <p>Image 5: style=medium_img
+        <img id="image5" , src="/labs/img/wallpapersden.com_watch-dogs-legion-8k-fan-art_1920x1080.jpg" class="medium_img">
+    </p>
+
+
+
+    <p>Image 6: style=large_img
+        <img id="image6" , src="/labs/img/watch-dogs-legion-logo-anonymous-uhdpaper.com-4K-3.jpg" class="large_img">
+    </p>
+
+
+<!--
+
+</style_NAME>
 
     <p>Image 2: height="256", but no style
         <img id="image2" src="../img/idwI8mjeIiIZAAAAAAAAAcRQ_w1024h768_c0.jpeg" height="256px">
@@ -61,29 +98,31 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples
     </p>
 
     <!-- 
-        LAB: Añade un elemento <p> con un elemento <img> anidado para Image 4 considerando:
-            id="image4"
+        LAB: Añade un elemento <p> con un elemento <img> anidado para Image 4 considerando: -->
+            <p> <img id="image4"
             src= "http://www.mozilla.org/images/mozilla-banner.gif"
-            class=small_img
-
-    -->
-
-
-    <!-- 
-        LAB: Añade un elemento <p> con un elemento anidado <img> para Image 5 considerando:
-            id="image5"
-            src="http://www.mozilla.org/images/mozilla-banner.gif"
-            class="large_img"
-    -->
+            class=small_img >
+            Una imagen </p>
+    
 
 
     <!-- 
-        LAB: Añade un elemento <p> con un elemento anidado <img> para Image 6 considerando:
-            id="image5"
+        LAB: Añade un elemento <p> con un elemento anidado <img> para Image 5 considerando: -->
+            <p>
+            <img id="image5"
             src="http://www.mozilla.org/images/mozilla-banner.gif"
-            class="large_img"
-    -->
+            class="large_img">
+            </p>
 
+
+    <!-- 
+        LAB: Añade un elemento <p> con un elemento anidado <img> para Image 6 considerando: -->
+        <p>
+        <img    id="image5"
+            src="http://www.mozilla.org/images/mozilla-banner.gif"
+            class="large_img" >
+        </p>
+        -->
 
     <div id="output"> </div>
 </body>
